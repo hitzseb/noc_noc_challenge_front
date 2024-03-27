@@ -1,25 +1,25 @@
 <template>
     <div class="sidebar fs-4">
       <ul class="nav flex-column">
-        <li class="nav-item my-2 shadow">
+        <li class="nav-item my-2">
           <router-link class="nav-link" to="/my-tasks">Mis Tareas</router-link>
         </li>
-        <li class="nav-item my-2 shadow">
+        <li class="nav-item my-2">
           <router-link class="nav-link" to="/all-tasks">Todas las Tareas</router-link>
         </li>
-        <li class="nav-item my-2 shadow">
+        <li class="nav-item my-2">
           <router-link class="nav-link" to="/forgot-password">Olvidé mi Contraseña</router-link>
         </li>
-        <li class="nav-item my-2 shadow">
+        <li class="nav-item my-2">
           <router-link class="nav-link" to="/update-password">Actualizar Contraseña</router-link>
         </li>
-        <li class="nav-item my-2 shadow">
+        <li class="nav-item my-2">
           <router-link class="nav-link" to="/login">Iniciar Sesión</router-link>
         </li>
-        <li class="nav-item my-2 shadow" v-if="isSuperAdmin">
+        <li class="nav-item my-2" v-if="isSuperAdmin">
           <router-link class="nav-link" to="/new-task">Agregar tarea</router-link>
         </li>
-        <li class="nav-item my-2 shadow" v-if="isSuperAdmin">
+        <li class="nav-item my-2" v-if="isSuperAdmin">
           <router-link class="nav-link" to="/create-user">Crear Usuario</router-link>
         </li>
         <li class="nav-item my-2 shadow" v-if="isSuperAdmin">
@@ -60,7 +60,7 @@ export default {
 <style>
 /* Estilo hover para los elementos li */
 .nav-item:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Cambia el color de fondo al pasar el puntero sobre el elemento */
-    transition: background-color 0.3s ease; /* Agrega una transición suave */
+    background-color: rgba(0, 0, 0, 0.1); /* Cambia el color de fondo al pasar el puntero */
+    transition: background-color 0.1s ease; /* Agrega una transición suave */
 }
 </style>
