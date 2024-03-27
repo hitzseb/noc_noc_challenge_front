@@ -22,7 +22,7 @@
         <li class="nav-item my-2" v-if="isSuperAdmin">
           <router-link class="nav-link" to="/create-user">Crear Usuario</router-link>
         </li>
-        <li class="nav-item my-2 shadow" v-if="isSuperAdmin">
+        <li class="nav-item my-2" v-if="isSuperAdmin">
           <router-link class="nav-link" to="/make-report">Reporte</router-link>
         </li>
       </ul>

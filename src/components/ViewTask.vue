@@ -9,7 +9,7 @@
                 <h2 class="card-title">{{ task.title }}</h2>
                 <p class="card-text"><strong>Descripción:</strong> {{ task.description }}</p>
                 <p class="card-text"><strong>Estado:</strong> {{ task.status.status }}</p>
-                <p class="card-text"><strong>Fecha de creación:</strong> {{ task.created_at }}</p>
+                <p class="card-text"><strong>Fecha inicio:</strong> {{ task.created_at }}</p>
 
                 <!-- Comentarios -->
                 <div v-if="task.comments.length > 0">
@@ -38,12 +38,12 @@
                         {{ attachment.path }}
                       </a>
                       <button @click="deleteAttachment(attachment.id)"
-                        class="btn btn-danger btn-sm float-end" v-if="isUserSuperAdmin">Eliminar</button>
+                        class="btn btn-danger btn-sm float-end">Eliminar</button>
                     </div>
                   </div>
 
                   <!-- Cambiar estado -->
-                  <div class="mt-3" v-if="isUserSuperAdmin">
+                  <div class="mt-3">
                     <label for="status" class="form-label">Cambiar Estado:</label>
                     <select v-model="selectedStatus" id="status" class="form-select mb-3">
                       <option v-for="status in statusList" :key="status.id" :value="status.id">{{ status.status }}
@@ -137,30 +137,6 @@ export default {
         console.error('Error deleting attachment:', error);
       }
     },
-
-  },
-
-  computed: {
-    showStatusSelect() {
-      // Verifica si el usuario autenticado es super_admin o si es el usuario asignado a la tarea
-      return this.isUserSuperAdmin || this.isTaskAssignedUser;
-    },
-    isUserSuperAdmin() {
-      // Obtener el usuario autenticado del localStorage
-      const userData = JSON.parse(localStorage.getItem('userData'));
-      // Verificar si el usuario tiene el rol de super_admin
-      return userData && userData.data.role === 'super_admin';
-    },
-    isTaskAssignedUser() {
-      // Obtener el usuario autenticado del localStorage
-      const userData = JSON.parse(localStorage.getItem('userData'));
-      // Verificar si el usuario es el asignado a la tarea
-      return userData.data.id === this.task.user_id;
-    },
   },
 };
 </script>
-
-<style scoped>
-/* Estilos específicos del componente */
-</style>

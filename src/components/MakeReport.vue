@@ -11,7 +11,7 @@
           <label for="end-date" class="form-label">Fecha de fin:</label>
           <input type="date" id="end-date" v-model="endDate" class="form-control">
         </div>
-        <button @click="generateReport" class="btn btn-primary">Generar Informe</button>
+        <button @click="generateReport" class="btn btn-primary">Generar reporte</button>
         <div v-if="error" class="alert alert-danger mt-3">{{ error }}</div>
         <div v-if="success" class="alert alert-success mt-3">{{ success }}</div>
       </div>

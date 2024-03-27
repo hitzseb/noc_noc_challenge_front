@@ -8,7 +8,7 @@
               <h5>{{ task.title }}</h5>
               <p>{{ task.description }}</p>
               <p><strong>Estado:</strong> {{ task.status.status }}</p>
-              <p><strong>Usuario:</strong> {{ task.user.name }}</p>
+              <p><strong>Empleado:</strong> {{ task.user.name }}</p>
             </div>
             <div class="card-footer">
               <router-link :to="'/task/' + task.id">Ver detalle</router-link>

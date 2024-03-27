@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <div class="login-form">
-          <h3>{{ message }}</h3>
+          <h3>Inicio de sesión</h3>
           <form @submit.prevent="login">
             <div class="mb-3">
               <label for="email" class="form-label">Email:</label>
@@ -28,7 +28,6 @@ export default {
   name: "LoginForm",
   data() {
     return {
-      message: 'Login Form',
       email: '',
       password: ''
     }
